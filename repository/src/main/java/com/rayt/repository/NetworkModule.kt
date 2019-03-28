@@ -28,17 +28,16 @@ internal class NetworkModule{
     @Provides
     @RepositoryScope
     fun cache(context: Context):Cache{
-        if(Looper.getMainLooper() == Looper.myLooper())
-            throw IllegalStateException("Initializing cache on main thread")
         return Cache(context.cacheDir, HTTP_RESPONSE_CACHE)
-
     }
 
     @Provides
     @RepositoryScope
     fun certificatePinner():CertificatePinner{
-        return CertificatePinner.Builder()
-            .add(EnvironmentConstants.BASE_URL,EnvironmentConstants.CERTIFICATE)
-            .build()
+        return CertificatePinner.Builder().also {certBuilder->
+            EnvironmentConstants.certMap.forEach{pair->
+                certBuilder.add(pair.key,pair.value)
+            }
+        }.build()
     }
 }
