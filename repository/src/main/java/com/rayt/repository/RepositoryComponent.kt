@@ -4,7 +4,7 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 
-@Component(modules = [RetrofitModule::class])
+@Component(modules = [RetrofitModule::class, DatabaseModule::class])
 @RepositoryScope
 interface RepositoryComponent{
 
