@@ -4,7 +4,7 @@ import com.rayt.repository.RepositoryComponent
 import dagger.Component
 import dagger.android.AndroidInjector
 
-@Component(dependencies = [RepositoryComponent::class])
+@Component(modules = [ActivityFragmentModule::class],dependencies = [RepositoryComponent::class])
 @AppScope
 interface AppComponent : AndroidInjector<MyApplication>
 
