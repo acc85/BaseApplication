@@ -9,7 +9,7 @@ plugins {
 android {
     compileSdkVersion(Versions.compileSdk)
     defaultConfig {
-        applicationId = "com.rayt.baseapplication"
+        applicationId = Application.id
         minSdkVersion (Versions.minSdk)
         targetSdkVersion (Versions.targetSdk)
         versionCode = Versions.versionCode
@@ -57,7 +57,7 @@ dependencies {
     implementation (KotlinDependencies.coroutinesAndroid)
     implementation (KotlinDependencies.coroutines)
 
-    implementation (project(":repository"))
+    implementation (project(Modules.repository))
     testImplementation (TestLibraries.junit)
     androidTestImplementation (AndroidXLibraries.testRunner)
     androidTestImplementation (AndroidXLibraries.espresso)

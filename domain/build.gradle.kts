@@ -46,6 +46,7 @@ dependencies {
     androidTestImplementation(AndroidXLibraries.testRunner)
     androidTestImplementation(AndroidXLibraries.espresso)
     implementation(KotlinDependencies.kotlinStandardLibrary)
+    implementation(project(Modules.repository))
 
 }
 repositories {

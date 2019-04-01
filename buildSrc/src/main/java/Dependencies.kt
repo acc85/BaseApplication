@@ -34,7 +34,7 @@ object Application{
 
 object Modules {
     val app = ":app"
-    val respository = ":repository"
+    val repository = ":repository"
     val domain = ":domain"
 }
 
@@ -83,6 +83,7 @@ object ExternalLibraries {
     val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger_version}"
     val daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:${Versions.dagger_version}"
 }
+
 
 object TestLibraries {
     val junit = "junit:junit:${Versions.junit}"
