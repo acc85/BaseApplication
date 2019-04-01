@@ -1,6 +1,6 @@
 package com.rayt.baseapplication
 
-import com.rayt.repository.RepositoryComponent
+import com.rayt.repository.di.components.RepositoryComponent
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule

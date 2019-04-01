@@ -1,14 +1,14 @@
-package com.rayt.repository
+package com.rayt.repository.di.modules
 
 import android.content.Context
-import android.os.Looper
+import com.rayt.repository.EnvironmentConstants
+import com.rayt.repository.di.scopes.RepositoryScope
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
 import okhttp3.CertificatePinner
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import java.lang.IllegalStateException
 
 @Module
 internal class NetworkModule{
@@ -35,7 +35,7 @@ internal class NetworkModule{
     @RepositoryScope
     fun certificatePinner():CertificatePinner{
         return CertificatePinner.Builder().also {certBuilder->
-            EnvironmentConstants.certMap.forEach{pair->
+            EnvironmentConstants.certMap.forEach{ pair->
                 certBuilder.add(pair.key,pair.value)
             }
         }.build()

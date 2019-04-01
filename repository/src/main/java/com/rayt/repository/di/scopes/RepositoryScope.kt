@@ -1,4 +1,4 @@
-package com.rayt.repository
+package com.rayt.repository.di.scopes
 
 import javax.inject.Scope
 

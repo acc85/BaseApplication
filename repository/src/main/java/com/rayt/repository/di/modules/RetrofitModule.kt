@@ -1,8 +1,10 @@
-package com.rayt.repository
+package com.rayt.repository.di.modules
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
+import com.rayt.repository.EnvironmentConstants
+import com.rayt.repository.di.scopes.RepositoryScope
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
