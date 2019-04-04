@@ -36,7 +36,6 @@ dependencies {
     implementation (fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation (KotlinDependencies.kotlinStandardLibrary)
     implementation (AndroidXLibraries.appcompat)
-
     implementation (AndroidXLibraries.constraintLayout)
 
     implementation(AndroidXLibraries.lifecycleExtensions)
