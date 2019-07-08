@@ -1,9 +1,8 @@
-plugins {
+plugins{
     id(Plugins.androidLibrary)
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinKspt)
     kotlin(Plugins.kotlinAndroidExtensions)
-
 }
 
 android {
@@ -56,4 +55,3 @@ dependencies {
 
     implementation(AndroidXLibraries.appcompat)
 }
-

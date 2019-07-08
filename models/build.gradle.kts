@@ -25,6 +25,10 @@ android {
         }
     }
 
+    dataBinding{
+        isEnabled = true
+    }
+
 }
 
 dependencies {
@@ -51,4 +55,3 @@ dependencies {
 repositories {
     mavenCentral()
 }
-

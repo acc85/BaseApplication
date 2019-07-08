@@ -36,6 +36,11 @@ object Modules {
     val app = ":app"
     val repository = ":repository"
     val domain = ":domain"
+    val models = ":models"
+    val resources = ":resources"
+    val utilities = ":utilities"
+
+
 }
 
 object KotlinDependencies {
@@ -84,6 +89,13 @@ object ExternalLibraries {
     val daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:${Versions.dagger_version}"
 }
 
+object Plugins{
+    val androidApplication = "com.android.application"
+    val androidLibrary = "com.android.library"
+    val kotlinKspt = "kapt"
+    val kotlinAndroid = "android"
+    val kotlinAndroidExtensions = "android.extensions"
+}
 
 object TestLibraries {
     val junit = "junit:junit:${Versions.junit}"

@@ -1,9 +1,8 @@
-plugins {
+plugins{
     id(Plugins.androidLibrary)
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinKspt)
     kotlin(Plugins.kotlinAndroidExtensions)
-
 }
 
 android {
@@ -22,7 +21,6 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-
 }
 
 dependencies {
@@ -56,4 +54,3 @@ dependencies {
 
     implementation(AndroidXLibraries.appcompat)
 }
-

@@ -1,25 +1,24 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-kapt")
-    id("kotlin-android")
-    id("kotlin-android-extensions")
+    id(Plugins.androidApplication)
+    kotlin(Plugins.kotlinAndroid)
+    kotlin(Plugins.kotlinKspt)
+    kotlin(Plugins.kotlinAndroidExtensions)
 }
-
 
 android {
     compileSdkVersion(Versions.compileSdk)
     defaultConfig {
         applicationId = Application.id
-        minSdkVersion (Versions.minSdk)
-        targetSdkVersion (Versions.targetSdk)
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
         versionCode = Versions.versionCode
         versionName = Versions.versionName
         testInstrumentationRunner = AndroidXLibraries.testInstrumentationRunner
     }
     buildTypes {
         getByName("release") {
-            isMinifyEnabled =false
-            proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -33,32 +32,36 @@ android {
 }
 
 dependencies {
-    implementation (fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation (KotlinDependencies.kotlinStandardLibrary)
-    implementation (AndroidXLibraries.appcompat)
-    implementation (AndroidXLibraries.constraintLayout)
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(KotlinDependencies.kotlinStandardLibrary)
+    implementation(AndroidXLibraries.appcompat)
+    implementation(AndroidXLibraries.constraintLayout)
+    implementation(AndroidXLibraries.recyclerview)
 
     implementation(AndroidXLibraries.lifecycleExtensions)
 
-    implementation (ExternalLibraries.dagger)
-    implementation (ExternalLibraries.daggerAndroid)
-    implementation (ExternalLibraries.daggerAndroidSupport) // if you use the support libraries
+    implementation(ExternalLibraries.dagger)
+    implementation(ExternalLibraries.daggerAndroid)
+    implementation(ExternalLibraries.daggerAndroidSupport) // if you use the support libraries
+    annotationProcessor(ExternalLibraries.daggerAndroidProcessor)
+    annotationProcessor(ExternalLibraries.daggerCompiler)
 
-    annotationProcessor (ExternalLibraries.daggerAndroidProcessor)
-    annotationProcessor (ExternalLibraries.daggerCompiler)
 
+    kapt(AndroidXLibraries.lifecycleCompiler)
 
-    kapt (AndroidXLibraries.lifecycleCompiler)
+    kapt(ExternalLibraries.daggerCompiler)
+    kapt(ExternalLibraries.daggerAndroidProcessor)
 
-    kapt (ExternalLibraries.daggerCompiler)
-    kapt (ExternalLibraries.daggerAndroidProcessor)
+    implementation(KotlinDependencies.coroutinesAndroid)
+    implementation(KotlinDependencies.coroutines)
 
-    implementation (KotlinDependencies.coroutinesAndroid)
-    implementation (KotlinDependencies.coroutines)
+    implementation(project(Modules.repository))
+    implementation(project(Modules.models))
+    implementation(project(Modules.resources))
+    implementation(project(Modules.utilities))
 
-    implementation (project(Modules.repository))
-    testImplementation (TestLibraries.junit)
-    androidTestImplementation (AndroidXLibraries.testRunner)
-    androidTestImplementation (AndroidXLibraries.espresso)
+    testImplementation(TestLibraries.junit)
+    androidTestImplementation(AndroidXLibraries.testRunner)
+    androidTestImplementation(AndroidXLibraries.espresso)
 
 }

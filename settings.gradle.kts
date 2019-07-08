@@ -1,1 +1,1 @@
-include (Modules.app, Modules.repository, Modules.domain)
+include (Modules.app, Modules.repository, Modules.domain, Modules.models, Modules.resources, Modules.utilities)
